@@ -1,3 +1,11 @@
+# 1. Ask what the user would like to do
+# 2. Inform user to enter '?' to see list of options
+#     i.   'a' for adding a new contact
+#     ii.  'e' for editing a contact
+#     iii. 'd' for deleting a contact
+#     iv.  'v' to look for a contact by their first name
+#     v.   'l' to view all contacts
+
 from peewee import *
 from datetime import date
 
@@ -15,6 +23,7 @@ class Contact(BaseModel):
 
 db.connect()
 
+# Creates a new contact (name, birthdate(year, month, day), email)
 new_key = input('Please enter a new contact name: ')
 new_name = str(new_key).capitalize()
 new_year = int(input('Please enter the birth year: '))
