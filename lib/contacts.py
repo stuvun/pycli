@@ -13,26 +13,30 @@ class BaseModel(Model):
 class Contact(BaseModel):
     name = CharField()
     birthday = DateField()
-    phone = CharField()
-
+    email = CharField()
 
 db.connect()
 db.drop_tables([Contact])
 db.create_tables([Contact])
 
-steven = Contact(name='Steven', birthday=date(1990, 1, 14), phone='555-555-5551')
+steven = Contact(name='Steven', birthday=date(1990, 1, 14), email='example2@gmail.com')
 steven.save()
-roger = Contact(name='Roger', birthday=date(1994, 11, 18), phone='555-555-5552')
+roger = Contact(name='Roger', birthday=date(1994, 11, 18), email='example3@gmail.com')
 roger.save()
-bola = Contact(name='Bola', birthday=date(1994, 2, 13), phone='555-555-5553')
+bola = Contact(name='Bola', birthday=date(1994, 2, 13), email='example4@gmail.com')
 bola.save()
-ray = Contact(name='Ray', birthday=date(1992, 11, 14), phone='555-555-5554')
+ray = Contact(name='Ray', birthday=date(1992, 11, 14), email='example5@gmail.com')
 ray.save()
 
-print(f"{steven.name} - {steven.birthday} - {steven.phone}")
+new_key = input('Please enter a new contact name: ')
+new_name = str(new_key).capitalize()
 
-steven.birthday = date(1993, 1, 14)
-steven.phone = '555-555-5555'
-steven.save()
+new_year = int(input('Please enter the birth year: '))
+new_month = int(input('Please enter the birth month (number): '))
+new_day = int(input('Please enter the birth day: '))
 
-print(f"{steven.name} - {steven.birthday} - {steven.phone}")
+new_email = input('Please enter the email (example1@gmail.com): ')
+
+new_key = Contact(name=new_name, birthday=date(new_year, new_month, new_day), email=new_email)
+
+print(f"{new_key.name} - {new_key.birthday} - {new_key.email}")
