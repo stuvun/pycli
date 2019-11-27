@@ -38,5 +38,6 @@ new_day = int(input('Please enter the birth day: '))
 new_email = input('Please enter the email (example1@gmail.com): ')
 
 new_key = Contact(name=new_name, birthday=date(new_year, new_month, new_day), email=new_email)
+new_key.save()
 
 print(f"{new_key.name} - {new_key.birthday} - {new_key.email}")
