@@ -37,3 +37,8 @@ if selection == "a":
     new_key = Contact(name=new_name, birthday=date(new_year, new_month, new_day), email=new_email)
     new_key.save()
     print(f"\nSuccessfully added '{new_key.name} - {new_key.birthday} - {new_key.email}' to your contacts list.")
+if selection == "v":
+    name_search = str(input("Please enter the name of the contact you are looking for: ")).capitalize()
+    query = Contact.select()
+    search_id = Contact.get(Contact.name == name_search).id - 1
+    print(query[search_id].name)
