@@ -8,6 +8,8 @@
 
 from peewee import *
 from datetime import date
+import tkinter as tk
+from tkinter import *
 
 db = PostgresqlDatabase("contacts", user="postgres", password="",
                         host="localhost", port=5432)
@@ -39,6 +41,10 @@ if selection == "a":
     print(f"\nSuccessfully added '{new_key.name} - {new_key.birthday} - {new_key.email}' to your contacts list.")
 if selection == "v":
     name_search = str(input("Please enter the name of the contact you are looking for: ")).capitalize()
-    query = Contact.select()
+    query = Contact.select().dicts()
     search_id = Contact.get(Contact.name == name_search).id - 1
-    print(query[search_id].name)
+    print(query[search_id])
+if selection == "l":
+    query = Contact.select().dicts()
+    for i in query:
+        print(i)
