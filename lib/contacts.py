@@ -17,8 +17,8 @@ class Contact(BaseModel):
 
 db.connect()
 
-run = "y"
-while run == "y":
+run = "Y"
+while run == "Y":
     # Prints all the available options for navigating contacts
     selection = input("Please enter an option (enter '?' to see list of options): ")
     while selection != "?" and selection != "a" and selection != "v" and selection != "l":
@@ -49,4 +49,4 @@ while run == "y":
             print(i)
     run = input("Would you like to do something else? (Y/N): ").capitalize()
     while run != "Y" and run != "N":
-        run = input("Please enter 'Y' or 'N': ")
+        run = input("Please enter 'Y' or 'N': ").capitalize()
