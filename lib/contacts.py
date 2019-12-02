@@ -20,9 +20,9 @@ db.connect()
 run = "Y"
 while run == "Y":
     # Prints all the available options for navigating contacts
-    selection = input("Please enter an option (enter '?' to see list of options): ")
+    selection = input("Please enter an option (enter '?' to see list of options): ").lower()
     while selection != "?" and selection != "a" and selection != "v" and selection != "l":
-        selection = input("There are no options that match your selection.\nPlease enter a valid option (enter '?' to see list of options): ")
+        selection = input("There are no options that match your selection.\nPlease enter a valid option (enter '?' to see list of options): ").lower()
     if selection == "?":
         print("- 'a' to add a new contact\n- 'e' to edit a contact\n- 'v' to look for a contact by their name\n- 'l' to view all saved contacts")
     # Creates a new contact (name, birthdate(year, month, day), email)
