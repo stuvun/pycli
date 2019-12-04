@@ -14,7 +14,7 @@ This project is a command line application of a personal contact book. You can a
 ## Getting Started
 
 Once you've started the app through `python3 contacts.py` in your lib directory, you'll be prompted to enter an option. You can enter '?' to view all the available options.
-![example](images/pycliIntro.png)
+![example](https://github.com/stuvun/pycli/blob/master/lib/images/pycliIntro.png)
 
 After you're done with an option, you'll be asked if you want to continue using the app, which you'll reply with either 'Y' for yes or 'N' for no.
 
